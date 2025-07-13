@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class Main {
@@ -12,12 +11,12 @@ public class Main {
         int leftPointerStr = 0;
         int leftPointerS = 0;
         while (leftPointerS < s.length()){
+            if (str.charAt(leftPointerStr) == s.charAt(leftPointerS)){
+                leftPointerStr ++;
+            }
             if (leftPointerStr == 5){
                 System.out.println("YES");
                 return;
-            }
-            if (str.charAt(leftPointerStr) == s.charAt(leftPointerS)){
-                leftPointerStr ++;
             }
             leftPointerS ++;
         }
