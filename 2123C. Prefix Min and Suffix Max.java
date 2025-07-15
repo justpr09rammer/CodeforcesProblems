@@ -12,6 +12,7 @@ public class Main {
             int[] array = new int[n];
             for (int i = 0; i < n; i++) {
                 array[i] = scanner.nextInt();
+                
             }
             int[] dpMinLeft = new int[n];
             dpMinLeft[0] = Integer.MAX_VALUE;
