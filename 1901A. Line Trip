@@ -1,0 +1,27 @@
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+        while (t > 0){
+
+            int n, x;
+            n = scanner.nextInt();
+            x = scanner.nextInt();
+            int current = 0;
+            int result = Integer.MIN_VALUE;
+
+            for (int i = 0; i < n; i ++){
+                int next = scanner.nextInt();
+                result = Math.max(result, next-current);
+                current = next;
+            }
+            result = Math.max(result, 2 * (x - current));
+            System.out.println(result);
+
+            t --;
+        }
+    }
+}
+
