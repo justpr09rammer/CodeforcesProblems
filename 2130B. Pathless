@@ -1,0 +1,64 @@
+
+import java.util.*;
+
+
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+
+        while (t-- > 0) {
+            int n = scanner.nextInt();
+            int s = scanner.nextInt();
+            int sum = 0;
+            int[] array = new int[n];
+
+            for (int i = 0; i < n; i++) {
+                array[i] = scanner.nextInt();
+                sum += array[i];
+            }
+
+            int[] temp = new int[3];
+            for (int element : array) {
+                temp[element]++;
+            }
+            if (sum > s) {
+
+                for (int i = 0; i < temp[0]; i++) {
+                    System.out.print(0 + " ");
+                }
+                for (int i = 0; i < temp[2]; i++) {
+                    System.out.print(2 + " ");
+                }
+                for (int i = 0; i < temp[1]; i++) {
+                    System.out.print(1 + " ");
+                }
+            } else if (s % sum == 0) {
+                System.out.print(-1);
+            } else {
+                if (sum % s == 0) {
+                    System.out.print(-1);
+                } else {
+
+                    if (s - sum == 1) {
+                        for (int i = 0; i < temp[0]; i++) {
+                            System.out.print(0 + " ");
+                        }
+                        for (int i = 0; i < temp[2]; i++) {
+                            System.out.print(2 + " ");
+                        }
+                        for (int i = 0; i < temp[1]; i++) {
+                            System.out.print(1 + " ");
+                        }
+                    } else {
+                        if ((s - sum) % 2 == 0 || (s - sum) % 3 == 0 || (s - sum) % 2 == 1) {
+                            System.out.print(-1);
+                        }
+                    }
+                }
+            }
+            System.out.println();
+        }
+    }
+}
