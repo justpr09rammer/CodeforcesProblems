@@ -1,0 +1,40 @@
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Scanner;
+import java.util.Set;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int t = scanner.nextInt();
+        while (t > 0){
+
+            int n = scanner.nextInt();
+            int[] array = new int[n];
+            Set<Integer> set = new HashSet<>();
+            boolean flag = false;
+            for (int i = 0; i < n; i ++){
+                array[i] = scanner.nextInt();
+
+                if (set.contains(array[i])){
+                    flag = true;
+                }
+                else {
+                    set.add(array[i]);
+                }
+            }
+            if (flag){
+                System.out.println("YES");
+            }
+            else System.out.println("NO");
+
+            t --;
+        }
+
+
+    }
+
+
+}
