@@ -67,6 +67,7 @@ public class Main {
                 while (dealDifference >= 2 && rightPointer >= 0 && leftPointer >= 0){
                     if (powerOccurrences[rightPointer] == 0){
                         rightPointer --;
+                        leftPointer --;
                     }
                     else
                         if (dealDifference - powerOccurrences[rightPointer] * 2 >= 0){
